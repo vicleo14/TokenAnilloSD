@@ -51,7 +51,7 @@ class Token
         {
             try
             {
-                conexion = new Socket(ip, 5000);
+                conexion = new Socket(ip, 50000);
                 
                 System.out.println("Conectado a "+ip);
                 break;
