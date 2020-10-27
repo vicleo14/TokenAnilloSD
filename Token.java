@@ -20,6 +20,7 @@ class Token
         try
         {
             ServerSocket servidor = new ServerSocket(50000);
+            System.out.println("Se habilita servidor en puerto 5000");
             Socket conexion = servidor.accept();
             entrada = new DataInputStream(conexion.getInputStream());
         }
@@ -51,11 +52,14 @@ class Token
             try
             {
                 conexion = new Socket(ip, 5000);
+                
+                System.out.println("Conectado a "+ip);
                 break;
             }
             catch (Exception e)
             {
                 //System.err.println(e.getMessage());
+                //System.out.println("No logro conectarse a "+ip);
                 Thread.sleep(500);
             }
         }
